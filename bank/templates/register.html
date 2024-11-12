@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Register Page
+{% endblock %}
+
+
+{% block content %}
+<body>
+    <div class="container mt-5">
+        <div class="card shadow-lg p-4 mx-auto" style="max-width: 500px;">
+            <h2 class="text-center mb-4">Create Your Account</h2>
+            <form method="POST" class="form-register">
+                {{ form.hidden_tag() }} <!-- CSRF protection field -->
+
+                <!-- Username Field -->
+                <div class="mb-3 row align-items-center">
+                    <label class="col-sm-4 col-form-label">{{ form.name.label }}</label>
+                    <div class="col-sm-8">
+                        {{ form.name(class="form-control", placeholder="Username", style="font-style: italic; font-size: 0.9em;") }}
+                    </div>
+                </div>
+
+                <!-- Email Field -->
+                <div class="mb-3 row align-items-center">
+                    <label class="col-sm-4 col-form-label">{{ form.email.label }}</label>
+                    <div class="col-sm-8">
+                        {{ form.email(class="form-control", placeholder="Email", style="font-style: italic; font-size: 0.9em;") }}
+                    </div>
+                </div>
+
+                <!-- Phone Field -->
+                <div class="mb-3 row align-items-center">
+                    <label class="col-sm-4 col-form-label">{{ form.phone.label }}</label>
+                    <div class="col-sm-8">
+                        {{ form.phone(class="form-control", placeholder="Phone", style="font-style: italic; font-size: 0.9em;") }}
+                    </div>
+                </div>
+
+                <!-- Address Field -->
+                <div class="mb-3 row align-items-center">
+                    <label class="col-sm-4 col-form-label">{{ form.address.label }}</label>
+                    <div class="col-sm-8">
+                        {{ form.address(class="form-control", placeholder="Address", style="font-style: italic; font-size: 0.9em;") }}
+                    </div>
+                </div>
+
+                <!-- Password Field -->
+                <div class="mb-3 row align-items-center">
+                    <label class="col-sm-4 col-form-label">{{ form.password1.label }}</label>
+                    <div class="col-sm-8">
+                        {{ form.password1(class="form-control", placeholder="Password", style="font-style: italic; font-size: 0.9em;") }}
+                    </div>
+                </div>
+
+                <!-- Confirm Password Field -->
+                <div class="mb-3 row align-items-center">
+                    <label class="col-sm-4 col-form-label">{{ form.password2.label }}</label>
+                    <div class="col-sm-8">
+                        {{ form.password2(class="form-control", placeholder="Confirm Password", style="font-style: italic; font-size: 0.9em;") }}
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="text-center mt-4">
+                    {{ form.submit(class="btn btn-primary") }}
+                </div>
+            </form>
+        </div>
+        <br>
+        <br>
+    </div>
+</body>
+
+{% endblock %}

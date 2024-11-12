@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Home Page
+{% endblock %}
+
+
+{% block content %}
+    <!-- Hero Section -->
+    <section class="hero bg-primary text-white text-center py-5">
+        <div class="container">
+            <h1 class="display-4">Welcome to the Bank Website</h1>
+            <p class="lead">Your trusted partner in managing your finances.</p>
+            <a href="{{ url_for('register_page') }}" class="btn btn-light btn-lg">Get Started</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">About Us</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce malesuada urna sit amet metus interdum, non
+                euismod nisi gravida. Suspendisse ac nisl lorem. Phasellus ac eros at dui aliquam consequat ut sed ante.</p>
+            <p>We provide the best banking services with a focus on security, ease of access, and customer satisfaction.</p>
+        </div>
+    </section>
+
+{% endblock%}

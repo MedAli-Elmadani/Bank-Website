@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Login Page
+{% endblock %}
+
+
+{% block content %}
+<body>
+    <div class="container mt-5">
+        <div class="card shadow-lg p-4 mx-auto" style="max-width: 400px;">
+            <h2 class="text-center mb-4">Log In</h2>
+            <form method="POST" class="form-login">
+                {{ form.hidden_tag() }} <!-- CSRF protection field -->
+
+                <!-- Username Field -->
+                <div class="mb-3 row align-items-center">
+                    <label class="col-sm-4 col-form-label">{{ form.name.label }}</label>
+                    <div class="col-sm-8">
+                        {{ form.name(class="form-control", placeholder="Username", style="font-style: italic; font-size: 0.9em;") }}
+                    </div>
+                </div>
+
+                <!-- Password Field -->
+                <div class="mb-3 row align-items-center">
+                    <label class="col-sm-4 col-form-label">{{ form.password.label }}</label>
+                    <div class="col-sm-8">
+                        {{ form.password(class="form-control", placeholder="Password", style="font-style: italic; font-size: 0.9em;") }}
+                    </div>
+                </div>
+
+                <!-- Register Link -->
+                <div class="text-center mb-3" style="color: gray;">
+                    Don't have an account?
+                    <a href="{{ url_for('register_page') }}" class="text-primary text-decoration-none">Register</a>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="text-center mt-4">
+                    {{ form.submit(class="btn btn-primary btn-block w-100") }}
+                </div>
+                <br>
+            </form>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+</body>
+
+
+
+{% endblock %}
