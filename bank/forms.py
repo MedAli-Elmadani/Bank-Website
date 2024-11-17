@@ -42,6 +42,5 @@ class TransactionForm(FlaskForm):
     from_acc = StringField(validators=[DataRequired(), Length(min=8, max=30)])
     recipient = StringField(validators=[DataRequired(), Length(min=8, max=30)])
     amount = StringField(validators=[DataRequired(), Length(min=2, max=6)])
-    notes = TextAreaField( validators=[DataRequired(), Length(min=5, max=150)])
     submit = SubmitField(label='Submit Transaction')
 
